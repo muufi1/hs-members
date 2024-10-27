@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "GUI to membership db",
   "scripts": {
-    "start": "DEBUG=hs-members:* node ./app.js"
+    "start": "DEBUG=hs-members:* node ./app.js",
+    "server1": "DEBUG=hs-members:* PORT=3001 node ./app.js",
+    "server2": "DEBUG=hs-members:* PORT=3002 node ./app.js"
   },
   "author": "Niina Manner",
   "license": "MIT",
@@ -13,6 +15,7 @@
     "express": "^4.21.1",
     "hbs": "^4.2.0",
     "http-errors": "^2.0.0",
+    "mariadb": "^3.4.0",
     "morgan": "^1.10.0"
   },
   "type": "module"
