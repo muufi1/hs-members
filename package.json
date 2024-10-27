@@ -1,0 +1,21 @@
+{
+  "name": "membersapp",
+  "version": "1.0.0",
+  "description": "GUI to membership db",
+  "scripts": {
+    "start": "DEBUG=membersapp:* node ./app.js"
+  },
+  "author": "Niina Manner",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.3",
+    "cookie-parser": "^1.4.7",
+    "debug": "^4.3.7",
+    "express": "^4.21.1",
+    "handlebars": "^4.7.8",
+    "hbs": "^4.2.0",
+    "http": "^0.0.1-security",
+    "morgan": "^1.10.0"
+  },
+  "type": "module"
+}

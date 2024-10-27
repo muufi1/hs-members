@@ -1,0 +1,8 @@
+{{#if member}}<h3>{{ member.name }}</h3>{{/if}}
+{{#if member}}<p>{{ member.email }}</p>{{/if}}
+<p>Key: {{ memberkey }}</p>
+{{#if memberkey }}
+  <hr/>
+  <p><a href="/members/destroy?key={{memberkey}}">Delete</a>
+  | <a href="/members/edit?key={{memberkey}}">Edit</a></p>
+{{/if}}

@@ -1,0 +1,6 @@
+<form method="POST" action="/members/destroy/confirm">
+<input type="hidden" name="memberkey" value="{{#if member}}{{memberkey}}{{/if}}" />
+<p>Delete {{member.name}}?</p>
+<br/><input type="submit" value="DELETE" />
+<a href="/members/view?key={{#if member}}{{memberkey}}{{/if}}">Cancel</a>
+</form>
