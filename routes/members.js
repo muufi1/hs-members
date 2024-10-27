@@ -26,7 +26,7 @@ router.post('/save', async (req, res, next) => {
                 req.body.name, req.body.email
             );
         }
-        res.redirect('/members/view?keys=' + req.body.memberkey);
+        res.redirect('/members/view?key=' + req.body.memberkey);
     } catch (err) { next(err); }
 });
 
@@ -38,5 +38,37 @@ router.get('/view', async (req, res, next) => {
             title: member ? member.name : "",
             memberkey: req.query.key, member: member
         });
+    } catch (err) { next(err); }
+});
+
+// Edit Member (update)
+router.get('/edit', async (req, res, next) => {
+    try {
+        const member = await members.read(req.query.key);
+        res.render('memberedit', {
+
+            title: member ? ("Edit " + member.name) : "Add a Member",
+            docreate: false,
+            memberkey: req.query.key, member: member
+        });
+    } catch (err) { next(err); }
+});
+
+// Ask to Delete Member (destroy)
+router.get('/destroy', async (req, res, next) => {
+    try {
+        const member = await members.read(req.query.key);
+        res.render('memberdestroy', {
+            title: member ? member.name : "",
+            memberkey: req.query.key, member: member
+        });
+    } catch (err) { next(err); }
+});
+
+// Really Destroy Member (destroy)
+router.post('/destroy/confirm', async (req, res, next) => {
+    try {
+        await members.destroy(req.body.memberkey);
+        res.redirect('/');
     } catch (err) { next(err); }
 });

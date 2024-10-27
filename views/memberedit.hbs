@@ -2,13 +2,13 @@
 <input type="hidden" name="docreate" value="<%= docreate ? 'create' : 'update'%>" />
 <p>Key:
   {{#if docreate }}
-  <input type="text" name="memberkey" value="" />
+  <input type="text" name="memberkey" value=""/>
   {{else}}
   {{#if member }}{{memberkey}}{{/if}}
-  <input type="hidden" name="memberkey" value="{{#if member}}{{memberkey}}{{/if}}" />
+  <input type="hidden" name="memberkey" value="{{#if member}}{{memberkey}}{{/if}}"/>
   {{/if}}
 </p>
-<p>Name: <input type="text" name="name" value="{{#if member }}{{member.name}}" /></p>
+<p>Name: <input type="text" name="name" value="{{#if member }}{{member.name}}{{/if}}" /></p>
 <br/><textarea rows=1 cols=50 name="email">{{#if member }}{{member.email}}{{/if}}</textarea>
-<br/><input type="submit" value="Submit" />
+<br/><input type="submit" value="Submit"/>
 </form>
