@@ -2,7 +2,7 @@ import { Member, AbstractMembersStore } from "./Members.js";
 
 const members = [];
 
-export class InMemoryMembersStore extends AbstractMembersStore {
+export default class InMemoryMembersStore extends AbstractMembersStore {
 
     async close() {
         

@@ -1,5 +1,5 @@
 import { default as express } from 'express';
-import { MembersStore as members } from '../app.js';
+import { MembersStore as members } from '../models/members-store.js';
 
 export const router = express.Router();
 

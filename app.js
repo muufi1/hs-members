@@ -14,8 +14,13 @@ const __dirname = approotdir;
 import { 
     normalizePort, onError, onListening, handle404, basicErrorHandler 
 } from './appsupport.js';
-import { InMemoryMembersStore } from './models/members-memory.js';
-export const MembersStore = new InMemoryMembersStore();
+import { useModel as useMembersModel } from './models/members-store.js';
+useMembersModel(process.env.MEMBERS_MODEL ? process.env.MEMBERS_MODEL : "memory")
+.then(store => {  })
+.catch(error => { onError({ code: 'EMEMBERSSTORE', error }); });
+import { default as MariaDBMembersStore } from './models/members-mariadb.js';
+const membersDB = new MariaDBMembersStore();
+import { testMail, sendLoginkey } from './mailer/mailer.js';
 
 import { router as indexRouter } from './routes/index.js';
 import { router as membersRouter } from './routes/members.js';
