@@ -6,7 +6,7 @@ let _MembersStore;
 
 export async function useModel(model) {
     try {
-        let MembersStoreModule = await import(`./members-${model}.js`);
+        let MembersStoreModule = await import(`./members-${model}.mjs`);
         let MembersStoreClass = MembersStoreModule.default;
         _MembersStore = new MembersStoreClass();
         return _MembersStore;

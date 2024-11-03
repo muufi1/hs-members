@@ -1,6 +1,10 @@
 <header>
     <h1>{{ title }}</h1>
     <div class="navbar">
-        <p><a href="/">Home</a> | <a href="/members/add">ADD Member</a></p>
+        <p><a href="/">Etusivu</a>
+        {{#if user}} 
+        | <a href="/membership">Jäsenyys</a> | <a href="/members/logout">Kirjaudu ulos</a>
+        {{/if}}
+        </p>
     </div>
 </header>

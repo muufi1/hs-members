@@ -1,7 +1,9 @@
-<ul>
-  {{#each memberlist}}
-  <li>{{ key }}:
-    <a href="/members/view?key={{ key }}">{{ name }}</a>
-  </li>
-  {{/each}}
-</ul>
+
+<form method="POST" action="/permission">
+<p>Anna sähköpostiosoitteesi: </p>
+<p>
+  <input type="text" name="email" value="" />
+</p>
+<br/>
+<input type="submit" value="Lähetä" />
+</form>

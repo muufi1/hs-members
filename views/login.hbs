@@ -1,0 +1,18 @@
+{{#if loginAllowed }}
+<form method="post" action="/members/login">
+<p>
+  Sähköpostiosoitteeseen {{loginEmail}} on lähetetty kirjautumiskoodi.<br/>
+  Kirjaudu sisään syöttämällä koodi allaolevaan kenttään:<br/>
+</p>
+<p>
+<input type="hidden" name="loginEmail" value="{{loginEmail}}" />
+<input type="text" name="loginkey" value="" />
+<input type="submit" value="Kirjaudu" />
+</p>
+</form>
+{{else}}
+<p>
+  Antamaasi sähköpostiosoitetta ei löydy jäsenrekisteristä.
+</p>
+{{/if}}
+

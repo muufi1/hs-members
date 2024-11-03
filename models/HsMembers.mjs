@@ -23,7 +23,7 @@ export class AbstractMembersStore {
     async readByKey(key, value) { }
     async readByUsername(value) { }
     async readByEmail(value) { }
-    async destroy(key) { }
-    async keylist() { }
-    async count() { } 
+    // async destroy(key) { }
+    // async keylist() { }
+    // async count() { } 
 }

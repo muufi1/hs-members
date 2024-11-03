@@ -1,6 +1,6 @@
 import { default as nodemailer } from 'nodemailer';
-import { options, testRecipient } from './mailer-opts.js';
-import { generateEmail } from './mailer-template.js';
+import { options, testRecipient } from './mailer-opts.mjs';
+import { generateEmail } from './mailer-template.mjs';
 
 const transporter = nodemailer.createTransport(options);
 

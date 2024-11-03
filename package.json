@@ -3,22 +3,27 @@
   "version": "1.0.0",
   "description": "GUI to membership db",
   "scripts": {
-    "start": "REQUEST_LOG_FORMAT=common DEBUG=hs-members:* node ./app.js",
-    "server1": "DEBUG=hs-members:* PORT=3001 node ./app.js",
-    "server2": "DEBUG=hs-members:* PORT=3002 node ./app.js"
+    "start": "REQUEST_LOG_FORMAT=common DEBUG=hs-members:* USER_SERVICE_URL=http://localhost:5858 node ./app.mjs",
+    "server1": "DEBUG=hs-members:* PORT=3001 node ./app.mjs",
+    "server2": "DEBUG=hs-members:* PORT=3002 node ./app.mjs"
   },
   "author": "Niina Manner",
   "license": "MIT",
   "dependencies": {
     "cookie-parser": "^1.4.7",
     "debug": "^4.3.7",
+    "dotenv": "^16.4.5",
     "express": "^4.21.1",
+    "express-session": "^1.18.1",
     "hbs": "^4.2.0",
     "http-errors": "^2.0.0",
     "mariadb": "^3.4.0",
     "morgan": "^1.10.0",
     "nodemailer": "^6.9.16",
-    "rotating-file-stream": "^3.2.5"
-  },
-  "type": "module"
+    "passport": "^0.7.0",
+    "passport-local": "^1.0.0",
+    "rotating-file-stream": "^3.2.5",
+    "session-file-store": "^1.5.0",
+    "superagent": "^10.1.1"
+  }
 }

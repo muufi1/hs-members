@@ -1,9 +1,9 @@
 <form method="POST" action="/members/save">
-<input type="hidden" name="docreate" value="<%= docreate ? 'create' : 'update'%>" />
+{{!-- <input type="hidden" name="docreate" value="<%= docreate ? 'create' : 'update'%>" /> --}}
 <p>Key:
-  {{#if docreate }}
+  {{!-- {{#if docreate }}
   <input type="text" name="memberkey" value=""/>
-  {{else}}
+  {{else}} --}}
   {{#if member }}{{memberkey}}{{/if}}
   <input type="hidden" name="memberkey" value="{{#if member}}{{memberkey}}{{/if}}"/>
   {{/if}}
